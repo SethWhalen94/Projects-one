@@ -9,7 +9,7 @@ def saveFile(url):
         img_link = requests.get(parse)
         img = Image.open(BytesIO(img_link.content))
         name = input("File name to save as: /n")
-        img.save('./images/' + str(name) + '.' + img.format)
+        img.save('' + str(name) + '.' + img.format)
 
 search = input('What would you like to search for? \n')
 params = {'q': search}

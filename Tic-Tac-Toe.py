@@ -3,8 +3,9 @@
 
 import turtle
 import time
-#import emoji
+import emoji
 from random import randint
+
 
 turtle.speed(0)
 
@@ -20,7 +21,7 @@ def forward(length):
 	return
 def back(length):
 	turtle.backward(length)
-	return	
+	return
 
 def circle(radius):
 	turtle.circle(radius)

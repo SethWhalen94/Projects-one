@@ -21,6 +21,6 @@ link = image['srcset'] # src = photo url
 
 file_name = dt.now().strftime('%m-%d-%y') # creates month-day-year name
 
-#urllib.request.urlretrieve(link, '/home/rudy/Pictures/%s' %file_name) # retrives img file from URL, saves it in picture folder with today's date
+#urllib.request.urlretrieve(link, /%s' %file_name) # retrives img file from URL, saves it in picture folder with today's date
 
 print(link)
