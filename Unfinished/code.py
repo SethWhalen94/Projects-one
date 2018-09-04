@@ -1,4 +1,4 @@
-import web
+''''import web
 
 urls = (
 
@@ -9,3 +9,4 @@ urls = (
 class index:
     def GET(self):
         return ("Hello world!")]
+        '''

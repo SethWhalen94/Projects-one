@@ -84,7 +84,7 @@ while true2:
 		print ("\n" * 100)
 		print ("Please enter letters only")
 	else:
-		true2 = False	
+		true2 = False
 ############ EO word/phrase Input ################
 
 ### Creating empty list to hold Correct guessed letters and list version of "word/phrase" entered ###

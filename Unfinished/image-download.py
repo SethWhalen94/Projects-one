@@ -1,26 +1,28 @@
-from bs4 import BeautifulSoup
-from datetime import datetime as dt
 import requests
+import random
 import urllib.request
 from urllib import request
+from bs4 import BeautifulSoup as bs
 
-pic_url = 'https://www.pexels.com/search/HD%20wallpaper/'
-res = requests.get(pic_url)
-#resp = request.urljoin(pic_url)
-
-soup = BeautifulSoup(res.text, 'lxml')
-
-product = soup.find('div',{'class': 'sfbgx'})
+url = "https://www.pexels.com/search/HD%20wallpaper/"
 
 
-image_box = soup.find('a', {'class': 'js-photo-link'}) #where 'a' is the anchor element, and the class name is 'cursor_zoom'
-image = image_box.find('img') # finds 'img' tag, start of image url
-
-link = image['srcset'] # src = photo url
 
 
-file_name = dt.now().strftime('%m-%d-%y') # creates month-day-year name
+user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
 
-#urllib.request.urlretrieve(link, /%s' %file_name) # retrives img file from URL, saves it in picture folder with today's date
+headers = {"User-Agent" : random.choice(user_agent)}
+req = requests.get(url,headers = headers)
+#import pdb; pdb.set_trace()
+html = req.text
+soup = bs(html,'lxml') # downloads all html text from website
 
-print(link)
+
+#r = requests.get(url)
+
+#soup = bs(r.text, "html.parser")
+
+#print (soup)
+soup = soup.find("a", {"class" : "js-photo-link" })
+soup = soup.find ("href")
+print (soup)

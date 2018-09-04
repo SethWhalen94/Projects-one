@@ -13,6 +13,7 @@ image = image_box.find('img') # finds 'img' tag, start of image url
 
 link = image['src'] # src = photo url
 
+#print (link)
 
 file_name = dt.now().strftime('%m-%d-%y') # creates month-day-year name
 file_dir = os.getcwd()
