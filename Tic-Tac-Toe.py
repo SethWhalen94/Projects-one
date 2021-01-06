@@ -6,8 +6,8 @@ import time
 #import emoji
 from random import randint
 
-
 turtle.speed(0)
+turtle.hideturtle()
 
 ##############Simplifying Turtle functions#############
 def left(angle):
@@ -21,7 +21,7 @@ def forward(length):
 	return
 def back(length):
 	turtle.backward(length)
-	return
+	return	
 
 def circle(radius):
 	turtle.circle(radius)
@@ -80,22 +80,22 @@ def draw_3():
 	return	
 def draw_4():
 	turtle.write('4', False, "center", ("Times", 50, "normal"))
-	return
+	return	
 def draw_5():
 	turtle.write('5', False, "center", ("Times", 50, "normal"))
-	return
+	return	
 def draw_6():
 	turtle.write('6', False, "center", ("Times", 50, "normal"))
-	return
+	return	
 def draw_7():
 	turtle.write('7', False, "center", ("Times", 50, "normal"))
-	return
+	return	
 def draw_8():
 	turtle.write('8', False, "center", ("Times", 50, "normal"))
-	return
+	return	
 def draw_9():
 	turtle.write('9', False, "center", ("Times", 50, "normal"))
-	return
+	return									
 ##########EO turtle functions ###########
 
 ## Drawing the X's and O's##
@@ -135,11 +135,12 @@ def Xs():
 	black()
 	pendown()
 	return
-###########EO Drawing X's , O's ##############
+###########EO Drawing X's , O's ##############		
 
 ### Function to draw the board ###
 def board():
 
+	
 	'''Draw '7' on board '''
 	forward(50)
 	left(90)
@@ -318,7 +319,7 @@ def five_to_3():
 	forward(100)
 	left(90)
 	forward(100)
-	right(90)
+	right(90)		
 	return
 
 def five_to_4():
@@ -347,7 +348,7 @@ def five_to_9():
 	right(90)
 	forward(100)
 	left(90)
-	return
+	return					
 ########## End of spot 5 (centre) ############
 
 ## From space 1 (top left) to all other spots ##
@@ -426,7 +427,7 @@ def turn(shape):
 		Xs()
 	else:
 		Os()
-	return
+	return		
 
 ##### Function that checks if a spot is taken and draws the appropriate shape ##
 def spot_choice(choice,spots,spots_player,player):
@@ -456,13 +457,13 @@ def spot_choice(choice,spots,spots_player,player):
 			if spots[0] == 1:
 				num = (input("This spot is already taken, choose a different one. \n \n Type here:"))
 				print ("\n"*3)
-			else:
+			else:	
 				if choice == '1':
 					print ("Drawing 'X' on board ")
 					print ("\n"*4)
 				else:
-					print ("Drawing 'O' on board \n")
-					print ("\n"*3)
+					print ("Drawing 'O' on board \n")	
+					print ("\n"*3)	
 				draw(1,choice)
 				#loop = 1
 				spots[0] = 1
@@ -478,7 +479,7 @@ def spot_choice(choice,spots,spots_player,player):
 					print ("Drawing 'X' on board \n")
 					print ("\n"*3)
 				else:
-					print ("Drawing 'O' on board \n")
+					print ("Drawing 'O' on board \n")	
 					print ("\n"*3)
 				draw(2,choice)
 				#loop = 1
@@ -1256,7 +1257,8 @@ def main():
 				#print ("Line 984")
 				time.sleep(3)
 				game_won = winner(spots_X,AI_choice,spots_taken)
-				if game_won == 2:
+				if game_won == 1:
+					#print("\nAI Won the game with choice = 1\n")
 					print ("\n AI: I win 101010101010..(laughing in binary) \n")
 				computer = 0
 				#choice = '2'
@@ -1279,7 +1281,8 @@ def main():
 				#print ("Line 992")
 				#time.sleep(3)
 				game_won = winner(spots_O,AI_choice,spots_taken)
-				if game_won == 2:
+				if game_won == 1:
+					#print("\nAI Won the game with choice = 2\n")
 					print ("\n AI: I win 101010101010..(laughing in binary) \n")
 				computer = 0
 				#choice = '1'
